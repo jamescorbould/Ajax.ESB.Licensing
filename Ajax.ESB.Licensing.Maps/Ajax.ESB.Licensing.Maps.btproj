@@ -65,7 +65,7 @@
     <None Include="Ajax.ESB.Licensing.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="GetKey_To_CallSprocGetKey.btm">
+    <Map Include="GetKeyRequest_To_CallSprocGetKey.btm">
       <TypeName>GetKey_To_CallSprocGetKey</TypeName>
       <Namespace>Ajax.ESB.Licensing.Maps</Namespace>
       <SubType>Task</SubType>
@@ -80,6 +80,13 @@
       <Project>{bdccc26b-3660-4311-ab92-37ab679b1f6d}</Project>
       <Name>Ajax.ESB.Licensing.InternalSchemas</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="CallSprocGetKeyResponse_To_GetKeyResponse.btm">
+      <TypeName>CallSprocGetKeyResponse_To_GetKeyResponse</TypeName>
+      <Namespace>Ajax.ESB.Licensing.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

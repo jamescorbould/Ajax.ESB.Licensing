@@ -28,6 +28,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\SolutionArtefacts\Ajax.ESB.Licensing.snk">
+      <Link>Ajax.ESB.Licensing.snk</Link>
+    </None>
     <None Include="Ajax.ESB.Licensing.itinerary" />
     <None Include="Ajax.ESB.Licensing.itinerary.diagram">
       <DependentUpon>Ajax.ESB.Licensing.itinerary</DependentUpon>
@@ -38,6 +41,12 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ajax.ESB.Licensing.InternalSchemas\Ajax.ESB.Licensing.InternalSchemas.btproj">
+      <Project>{bdccc26b-3660-4311-ab92-37ab679b1f6d}</Project>
+      <Name>Ajax.ESB.Licensing.InternalSchemas</Name>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="Build" />
   <Target Name="Clean" />

@@ -4,12 +4,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B554D12A-09F7-4B14-B0D0-687D32F0247C}</ProjectGuid>
+    <ProjectGuid>{BDCCC26B-3660-4311-AB92-37AB679B1F6D}</ProjectGuid>
     <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>library</OutputType>
     <GenericProcessing>true</GenericProcessing>
-    <RootNamespace>Ajax.ESB.Licensing.ExternalSchemas</RootNamespace>
-    <AssemblyName>Ajax.ESB.Licensing.ExternalSchemas</AssemblyName>
+    <RootNamespace>Ajax.ESB.Licensing.InternalSchemas</RootNamespace>
+    <AssemblyName>Ajax.ESB.Licensing.InternalSchemas</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <BpelCompliance>True</BpelCompliance>
   </PropertyGroup>
@@ -31,12 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\SolutionArtefacts\Ajax.ESB.Licensing.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -68,9 +62,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="GetLicenceKeyV1_20150611.xsd">
-      <TypeName>GetKey</TypeName>
-      <Namespace>GetLicenceKeyV1_20150611</Namespace>
+    <Schema Include="DataSetSchema_20150612.xsd">
+      <TypeName>DataSetSchema_20150612</TypeName>
+      <Namespace>Ajax.ESB.Licensing.InternalSchemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CallSprocGetLicenceKey_20150612.xsd">
+      <TypeName>CallSprocGetLicenceKey_20150612</TypeName>
+      <Namespace>Ajax.ESB.Licensing.InternalSchemas</Namespace>
       <SubType>Task</SubType>
     </Schema>
   </ItemGroup>

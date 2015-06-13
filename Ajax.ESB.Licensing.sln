@@ -10,7 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionArtefacts", "SolutionArtefacts", "{09CEC4C0-7CD3-41DB-85C0-619032825CC9}"
 	ProjectSection(SolutionItems) = preProject
 		SolutionArtefacts\Ajax.ESB.Licensing.snk = SolutionArtefacts\Ajax.ESB.Licensing.snk
-		Ajax.ESB.Licensing.ExternalSchemas\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml = Ajax.ESB.Licensing.ExternalSchemas\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml
+		SolutionArtefacts\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml = SolutionArtefacts\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajax.ESB.Licensing.InternalSchemas", "Ajax.ESB.Licensing.InternalSchemas\Ajax.ESB.Licensing.InternalSchemas.btproj", "{BDCCC26B-3660-4311-AB92-37AB679B1F6D}"

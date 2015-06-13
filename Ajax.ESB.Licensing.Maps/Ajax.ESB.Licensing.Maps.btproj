@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\SolutionArtefacts\Ajax.ESB.Licensing.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
       <Name>System</Name>
@@ -62,9 +68,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ajax.ESB.Licensing.snk" />
-  </ItemGroup>
-  <ItemGroup>
     <Map Include="GetKeyRequest_To_CallSprocGetKey.btm">
       <TypeName>GetKey_To_CallSprocGetKey</TypeName>
       <Namespace>Ajax.ESB.Licensing.Maps</Namespace>
@@ -87,6 +90,11 @@
       <Namespace>Ajax.ESB.Licensing.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SolutionArtefacts\Ajax.ESB.Licensing.snk">
+      <Link>Ajax.ESB.Licensing.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

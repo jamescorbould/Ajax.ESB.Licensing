@@ -28,21 +28,21 @@
         <elementListCompartment Id="fb8295fd-3af0-416e-9d1d-f7ce2ad29500" absoluteBounds="5.015, 2.035, 1.5950000000000002, 0.2493896484375" name="Resolver" titleTextColor="Black" itemTextColor="SteelBlue" />
       </nestedChildShapes>
     </itineraryServiceShape>
-    <connector Id="5870d1fa-c7bc-4e36-be69-2a9d45265b8e" edgePoints="[(2 : 2.10084554036458); (2.875 : 2.10084554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <connector Id="5870d1fa-c7bc-4e36-be69-2a9d45265b8e" edgePoints="[(2 : 2.10084554036458); (2.875 : 2.10084554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <onRampReferencesRequestMoniker Id="18475834-38ee-45b8-b6de-efd676a84dd9" />
       <nodes>
         <onRampShapeMoniker Id="341a90c8-e07b-4fed-9393-90b820ddad98" />
         <itineraryServiceShapeMoniker Id="ade3b279-0ec0-48e4-847c-79f0bb300a26" />
       </nodes>
     </connector>
-    <connector Id="f962dd90-7d68-4bf4-b259-f6fff918b056" edgePoints="[(6.625 : 2.00469482421875); (7.25 : 2.00469482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <connector Id="f962dd90-7d68-4bf4-b259-f6fff918b056" edgePoints="[(6.625 : 2.00469482421875); (7.25 : 2.00469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <requestReferencedByOffRampMoniker Id="b07b0c28-2f80-4838-a6ab-0635dc38d4de" />
       <nodes>
         <itineraryServiceShapeMoniker Id="26a8cbcf-4ee7-4262-93e6-0eeedc7d836a" />
         <offRampShapeMoniker Id="0f2593f2-48bf-4c5b-b875-ac3494406aae" />
       </nodes>
     </connector>
-    <connector Id="39547244-3a49-425e-8336-30d835cead1f" edgePoints="[(4.5 : 2.00469482421875); (5 : 2.00469482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <connector Id="39547244-3a49-425e-8336-30d835cead1f" edgePoints="[(4.5 : 2.00469482421875); (5 : 2.00469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <itineraryServiceReferencesTargetItineraryServiceMoniker Id="1f8ede41-a8a6-467d-9a97-fa68b0192f39" />
       <nodes>
         <itineraryServiceShapeMoniker Id="ade3b279-0ec0-48e4-847c-79f0bb300a26" />

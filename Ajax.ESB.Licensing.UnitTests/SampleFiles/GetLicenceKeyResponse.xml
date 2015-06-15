@@ -1,0 +1,29 @@
+<GetLicenceKeyResponse xmlns="http://schemas.microsoft.com/Sql/2008/05/Procedures/dbo">
+	<GetLicenceKeyResult>
+		<DataSet xmlns="http://schemas.datacontract.org/2004/07/System.Data">
+			<xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+				<xs:element msdata:IsDataSet="true" name="NewDataSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="NewTable">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="C04d8e6daf5b64186a07318fee19a019b" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:schema>
+			<diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+				<NewDataSet xmlns="">
+					<NewTable>
+						<C04d8e6daf5b64186a07318fee19a019b>e464a538-5f98-4375-a7b2-43b0dca1500e</C04d8e6daf5b64186a07318fee19a019b>
+					</NewTable>
+				</NewDataSet>
+			</diffgr:diffgram>
+		</DataSet>
+	</GetLicenceKeyResult>
+	<ReturnValue>0</ReturnValue>
+</GetLicenceKeyResponse>

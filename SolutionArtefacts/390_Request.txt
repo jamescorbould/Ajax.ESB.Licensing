@@ -1,0 +1,12 @@
+POST http://jcdevbts2013/Sentinet.Node.Ajax/3eb8f621-139c-41ba-9ca4-d165a3a425b7/4009e98b-159f-4991-9803-dfdd167d0f42/GetLicenceKey HTTP/1.1
+User-Agent: Fiddler
+Host: jcdevbts2013
+Content-Length: 104
+Content-Type: application/json;
+
+{
+    "GetLicenceKey": { 
+        "CustomerID": "C0000001",
+        "ProductID": "P0000001"
+    }
+}

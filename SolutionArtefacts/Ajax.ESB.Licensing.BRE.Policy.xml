@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="Ajax.ESB.Licensing">
+    <version major="1" minor="8" description="" modifiedby="JCDEVBTS2013\jamesc" date="2015-06-14T21:28:19.5557959+12:00" />
+    <configuration />
+    <bindings>
+      <class ref="Resolution" class="Resolution" instance="0" instances="16" selectivity="1">
+        <assembly>Microsoft.Practices.ESB.Resolver, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Practices.ESB.Resolver\v4.0_2.1.0.0__31bf3856ad364e35\Microsoft.Practices.ESB.Resolver.dll-->
+        <namespace>Microsoft.Practices.ESB.Resolver</namespace>
+      </class>
+    </bindings>
+    <rule name="SetGetLicenseKeyEndpoint" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="eacec640-b468-4df3-918c-bb96b6629b1a" element="1662ce6b-7f1f-483d-8327-7cb1ed233f01" />
+              <classmember member="get_MessageType" sideeffects="true">
+                <classref ref="Resolution" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>http://Ajax.ESB.Licensing/GetProductKey/20150611/v1#GetLicenceKey</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="2829f1b7-09c0-4396-b82e-23fd65d8439c" />
+          <classmember member="set_EndpointConfig" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>BindingType=sqlBinding&amp;BindingConfiguration=&lt;binding name="sqlBinding" /&gt;</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="20652bdd-c1f2-4b75-9e6b-7e20af98e66d" />
+          <classmember member="set_MessageExchangePattern" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>One-Way</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="9357b8ea-3663-4625-9681-a2fc2f423911" />
+          <classmember member="set_TransportLocation" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>mssql://jcdevbts2013//AjaxLicensing?</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="4ad331d0-820c-41cb-a98e-7e1f5a9d5360" />
+          <classmember member="set_TransportType" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>WCF-Custom</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="54624479-caea-4228-86b9-fbe188a8c64d" />
+          <classmember member="set_TargetNamespace" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>http://schemas.microsoft.com/Sql/2008/05</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="95dced57-5e9b-4dbe-9cd8-4b166853dd8a" element="9c97e7a0-d119-4b0d-8e39-2b281ae6ef8d" />
+          <classmember member="set_Action" sideeffects="true">
+            <classref ref="Resolution" />
+            <argument>
+              <constant>
+                <string>{Procedure/dbo/GetLicenceKey}</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="914ab4f9-4d1b-43fe-858d-090e8a216d79" activeEnvironment="Default" name="AjaxOnRamp" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="def5a0a1-d8fe-4bd1-ab0c-bbd7b4acf67b" wsaVersion="200508" name="WSHttpBinding_ITwoWayAsync" type="wsdl" bindingName="{http://Ajax.ESB.Licensing/GetProductKey/20150611/v1}WSHttpBinding_ITwoWayAsync" soapVersion="1_2" anonymous="optional" definition="http://intsat01/AjaxLicensing/OnRamp.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://intsat01/AjaxLicensing/OnRamp.svc?singleWsdl"><con:part><con:url>http://intsat01/AjaxLicensing/OnRamp.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BizTalkServiceInstance" targetNamespace="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsdl:documentation>
+    <CreationInfo Created="2015-07-06 07:27:42Z"/>
+  </wsdl:documentation>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITwoWayAsync_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Message" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/Message">
+      <xs:complexType name="MessageBody">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##any"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1/Imports" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1/Imports">
+      <xs:import namespace="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">
+      <xs:element name="GetLicenceKey">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomerID" type="xs:string"/>
+            <xs:element minOccurs="1" maxOccurs="1" name="ProductID" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute default="1.0" name="MinorVersion" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetLicenceKeyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LicenceKey" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute default="1.0" name="MinorVersion" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="OnRamp_GetLicenceKeyV1_InputMessage">
+    <wsdl:part name="part" element="tns:GetLicenceKey"/>
+  </wsdl:message>
+  <wsdl:message name="OnRamp_GetLicenceKeyV1_OutputMessage">
+    <wsdl:part name="part" element="tns:GetLicenceKeyResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="OnRamp">
+    <wsdl:documentation/>
+    <wsdl:operation name="GetLicenceKeyV1">
+      <wsdl:documentation/>
+      <wsdl:input message="tns:OnRamp_GetLicenceKeyV1_InputMessage"/>
+      <wsdl:output message="tns:OnRamp_GetLicenceKeyV1_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ITwoWayAsync" type="tns:OnRamp">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITwoWayAsync_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetLicenceKeyV1">
+      <wsdl:documentation/>
+      <soap12:operation soapAction="GetLicenceKeyV1" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" encodingStyle="http://www.w3.org/2003/05/soap-encoding"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BizTalkServiceInstance">
+    <wsdl:port name="WSHttpBinding_ITwoWayAsync" binding="tns:WSHttpBinding_ITwoWayAsync">
+      <soap12:address location="http://intsat01/AjaxLicensing/OnRamp.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://intsat01/AjaxLicensing/OnRamp.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://intsat01/AjaxLicensing/OnRamp.svc</con:endpoint></con:endpoints><con:operation id="851585ea-4f17-47ca-ba31-6c3ad523b3e7" isOneWay="false" action="GetLicenceKeyV1" name="GetLicenceKeyV1" bindingOperationName="GetLicenceKeyV1" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="345ccc6d-5250-472b-a5de-e3e8f12d2dab" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://intsat01/AjaxLicensing/OnRamp.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:GetLicenceKey MinorVersion="1.0">\r
+         <CustomerID>C0000001</CustomerID>\r
+         <ProductID>P0000001</ProductID>\r
+      </v1:GetLicenceKey>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetLicenceKeyV1" addDefaultAction="false" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="25a0bdd4-901f-4ec2-846b-500ec53af3c1" name="WSHttpBinding_ITwoWayAsync TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e844b2bd-0374-4859-90a5-68557e4048d3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetLicenceKeyV1 TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="879f5d59-7569-4d50-9120-1dee444acce4" name="GetLicenceKeyV1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSHttpBinding_ITwoWayAsync</con:interface><con:operation>GetLicenceKeyV1</con:operation><con:request name="GetLicenceKeyV1" id="dee79c1d-6b17-4c66-b46f-c1c946e73389"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://intsat01/AjaxLicensing/OnRamp.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:GetLicenceKey MinorVersion="1.0">\r
+         <CustomerID>?</CustomerID>\r
+         <ProductID>?</ProductID>\r
+      </v1:GetLicenceKey>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1/OnRamp/GetLicenceKeyV1Request"/></con:request></con:config></con:testStep><con:testStep type="request" id="54a50e2f-8d53-452d-8be7-9e2c82527bd3" name="GetLicenceKeyV1 - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSHttpBinding_ITwoWayAsync</con:interface><con:operation>GetLicenceKeyV1</con:operation><con:request name="GetLicenceKeyV1 - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType="" id="84a0d38d-514c-4ddc-8d14-68a939c9e95a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://intsat01/AjaxLicensing/OnRamp.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:GetLicenceKey MinorVersion="1.0">\r
+         <CustomerID>C0000001</CustomerID>\r
+         <ProductID>P0000001</ProductID>\r
+      </v1:GetLicenceKey>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d8237e9b-2935-4c76-93b5-5d5884ed576a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetLicenceKeyV1" addDefaultAction="false" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest id="df8d0cba-f9e3-4cd2-bc2f-9d27a7a00e52" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

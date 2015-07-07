@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="77d0e774-5e26-49bb-9833-b956343f5c63" activeEnvironment="Default" name="AjaxOnRampVirtualizedSentinet" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d1ba4f93-89bb-41ab-b367-ab29d6f70c71" wsaVersion="NONE" name="Endpoint" type="wsdl" bindingName="{http://schemas.nevatech.com/services/}Endpoint" soapVersion="1_1" anonymous="optional" definition="https://intsat01/Sentinet/metadata.axd/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a?format=swsdl&amp;token=4120BD45E940E4B5631AE9EFC869F990A788C6B4024E9F0DAC5B29D2B999876886F5389C6CEA0587F80B5D21B88BDD3FAC412AACF304E2A906044C213C6104F3C01EFC01D6900C84780854936678C7A6503D8B0FDA1AE5BB0F07FA804AA5B08A981271D959438BAD18142C183090AD1CF9A64E4BD7D7CCD3F0FFB02A5EAB8D23732A2E096EF75E72FD8F8EEFC4977E20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://intsat01/Sentinet/metadata.axd/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a?format=swsdl&amp;token=4120BD45E940E4B5631AE9EFC869F990A788C6B4024E9F0DAC5B29D2B999876886F5389C6CEA0587F80B5D21B88BDD3FAC412AACF304E2A906044C213C6104F3C01EFC01D6900C84780854936678C7A6503D8B0FDA1AE5BB0F07FA804AA5B08A981271D959438BAD18142C183090AD1CF9A64E4BD7D7CCD3F0FFB02A5EAB8D23732A2E096EF75E72FD8F8EEFC4977E20"><con:part><con:url>https://intsat01/Sentinet/metadata.axd/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a?format=swsdl&amp;token=4120BD45E940E4B5631AE9EFC869F990A788C6B4024E9F0DAC5B29D2B999876886F5389C6CEA0587F80B5D21B88BDD3FAC412AACF304E2A906044C213C6104F3C01EFC01D6900C84780854936678C7A6503D8B0FDA1AE5BB0F07FA804AA5B08A981271D959438BAD18142C183090AD1CF9A64E4BD7D7CCD3F0FFB02A5EAB8D23732A2E096EF75E72FD8F8EEFC4977E20</con:url><con:content><![CDATA[<wsdl:definitions name="Ajax.OnRamp" targetNamespace="http://schemas.nevatech.com/services/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://schemas.nevatech.com/services/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1" xmlns:tns="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetLicenceKey">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="CustomerID" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="ProductID" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute default="1.0" name="MinorVersion" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetLicenceKeyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="LicenceKey" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute default="1.0" name="MinorVersion" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IVirtualInterface_GetLicenceKeyV1_InputMessage">
+    <wsdl:part name="GetLicenceKey" element="q1:GetLicenceKey" xmlns:q1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1"/>
+  </wsdl:message>
+  <wsdl:message name="IVirtualInterface_GetLicenceKeyV1_OutputMessage">
+    <wsdl:part name="GetLicenceKeyResponse" element="q2:GetLicenceKeyResponse" xmlns:q2="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1"/>
+  </wsdl:message>
+  <wsdl:portType name="IVirtualInterface">
+    <wsdl:operation name="GetLicenceKeyV1">
+      <wsdl:input wsaw:Action="GetLicenceKeyV1" message="tns:IVirtualInterface_GetLicenceKeyV1_InputMessage"/>
+      <wsdl:output wsaw:Action="GetLicenceKeyV1Response" message="tns:IVirtualInterface_GetLicenceKeyV1_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Endpoint" type="tns:IVirtualInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetLicenceKeyV1">
+      <soap:operation soapAction="GetLicenceKeyV1" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ajax.OnRamp">
+    <wsdl:port name="Endpoint" binding="tns:Endpoint">
+      <soap:address location="http://intsat01/Ajax.ESB.Node/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a/d64ee547-c600-4a66-9561-1fce1526d0d9"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://intsat01/Ajax.ESB.Node/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a/d64ee547-c600-4a66-9561-1fce1526d0d9</con:endpoint></con:endpoints><con:operation id="d507119a-c482-4c32-b5f8-e2916e8894f9" isOneWay="false" action="GetLicenceKeyV1" name="GetLicenceKeyV1" bindingOperationName="GetLicenceKeyV1" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ccbc1c60-3e78-47dc-985a-fdbb01e1f71e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://intsat01/Ajax.ESB.Node/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a/d64ee547-c600-4a66-9561-1fce1526d0d9</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:GetLicenceKey MinorVersion="1.0">\r
+         <CustomerID>C0000001</CustomerID>\r
+         <ProductID>P0000001</ProductID>\r
+      </v1:GetLicenceKey>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetLicenceKeyV1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="c01fc77e-9c59-407d-917f-9752f0db078a" name="Endpoint TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a427671e-1148-48b8-ae93-5922945f10b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetLicenceKeyV1 TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="8bfb7a4a-1c64-4f19-9b25-dcf1450df045" name="GetLicenceKeyV1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Endpoint</con:interface><con:operation>GetLicenceKeyV1</con:operation><con:request name="GetLicenceKeyV1" id="6a5496fc-9355-49bb-a08d-37746914861d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://intsat01/Ajax.ESB.Node/6ddf4027-2d11-461c-9ce7-30b5b0c2b57a/d64ee547-c600-4a66-9561-1fce1526d0d9</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://Ajax.ESB.Licensing/GetProductKey/20150611/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:GetLicenceKey MinorVersion="1.0">\r
+         <!--Optional:-->\r
+         <CustomerID>?</CustomerID>\r
+         <!--Optional:-->\r
+         <ProductID>?</ProductID>\r
+      </v1:GetLicenceKey>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="GetLicenceKeyV1"/></con:request></con:config></con:testStep><con:loadTest id="f6b226eb-7144-420a-b7c0-9f2e42a4a785" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajax.ESB.Licensing.Maps", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajax.ESB.Licensing.UnitTests", "Ajax.ESB.Licensing.UnitTests\Ajax.ESB.Licensing.UnitTests.csproj", "{59D67148-C626-46C7-9DCC-7917ACD21E45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajax.ESB.Licensing.WebStore", "Ajax.ESB.Licensing.WebStore\Ajax.ESB.Licensing.WebStore.csproj", "{27FD4131-18D0-4ADD-AC00-69C61D6C4CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{59D67148-C626-46C7-9DCC-7917ACD21E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D67148-C626-46C7-9DCC-7917ACD21E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D67148-C626-46C7-9DCC-7917ACD21E45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27FD4131-18D0-4ADD-AC00-69C61D6C4CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27FD4131-18D0-4ADD-AC00-69C61D6C4CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27FD4131-18D0-4ADD-AC00-69C61D6C4CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27FD4131-18D0-4ADD-AC00-69C61D6C4CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

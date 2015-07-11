@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Itinerary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" uuid="" beginTime="" completeTime="" state="Pending" isRequestResponse="false" servicecount="2" name="Ajax" version="1.0" xmlns="http://schemas.microsoft.biztalk.practices.esb.com/itinerary">
+<Itinerary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" uuid="" beginTime="" completeTime="" state="Pending" isRequestResponse="false" servicecount="2" name="Ajax" version="1.10" xmlns="http://schemas.microsoft.biztalk.practices.esb.com/itinerary">
   <BizTalkSegment interchangeId="" epmRRCorrelationToken="" receiveInstanceId="" messageId="" xmlns="" />
   <ServiceInstance name="Microsoft.Practices.ESB.Services.Routing" type="Messaging" state="Pending" position="0" isRequestResponse="true" xmlns="" />
   <Services xmlns="">
-    <Service uuid="6a594d80-91f7-4e10-a203-b3c999b0f55e" beginTime="" completeTime="" name="Microsoft.Practices.ESB.Services.Routing" type="Messaging" state="Pending" isRequestResponse="true" position="0" serviceInstanceId="" isTrackingEnabled="true" stage="receiveInbound" id="d1096bf9211c4ea6aa1116f14978ea86" nextId="bd537af505d74c4bb5fc49c6606c4e96" businessName="RouteMessage" />
+    <Service uuid="6a594d80-91f7-4e10-a203-b3c999b0f55e" beginTime="" completeTime="" name="Microsoft.Practices.ESB.Services.Routing" type="Messaging" state="Pending" isRequestResponse="true" position="0" serviceInstanceId="" stage="receiveInbound" id="d1096bf9211c4ea6aa1116f14978ea86" nextId="bd537af505d74c4bb5fc49c6606c4e96" businessName="RouteMessage" />
   </Services>
   <Services xmlns="">
-    <Service uuid="78ae50af98534b8698b881f4f382daaa" beginTime="" completeTime="" name="GetLicenceKeyDb" type="Messaging" state="Pending" isRequestResponse="true" position="1" serviceInstanceId="" isTrackingEnabled="true" stage="sendTransmit" id="bd537af505d74c4bb5fc49c6606c4e96" nextId="00000000000000000000000000000000" businessName="SendPortFilter" />
+    <Service uuid="78ae50af98534b8698b881f4f382daaa" beginTime="" completeTime="" name="GetLicenceKeyDb" type="Messaging" state="Pending" isRequestResponse="true" position="1" serviceInstanceId="" stage="sendTransmit" id="bd537af505d74c4bb5fc49c6606c4e96" nextId="00000000000000000000000000000000" businessName="SendPortFilter" />
   </Services>
   <ResolverGroups xmlns="">
     <Resolvers serviceId="Microsoft.Practices.ESB.Services.Routing0">&lt;![CDATA[BRE:\\policy=Ajax.ESB.Licensing;version=1.10;useMsg=false;messageFile=;recognizeMessageFormat=false;]]&gt;</Resolvers>

@@ -1,51 +1,52 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Product App</title>
+    <title>Ajax Licensing App</title>
 </head>
 <body>
 
     <div>
-        <h2>All Products</h2>
+        <h2>Obtain License Key and Your Free Gift!</h2>
         <ul id="products" />
     </div>
     <div>
-        <h2>Search by ID</h2>
-        <input type="text" id="prodId" size="5" />
-        <input type="button" value="Search" onclick="find();" />
-        <p id="product" />
+        <input type="button" value="Obtain License Key" onclick="getKey();" />
+        <p id="key" />
+    </div>
+
+    <div>
+        <input type="button" value="Obtain Free Gift" onclick="getGift();" />
+        <p id="gift" />
     </div>
 
     <script src=".\jquery-2.0.3.min.js"></script>
     <script>
-    var uri = 'api/products';
+        var uriGift = '/Ajax.ESB.Node/177279b2-7741-4059-bff9-beddd6dd3feb/a9fe5b5c-6667-4f66-b420-e9fa735a8196';
+        var uriGetLicenceKey = '/Ajax.ESB.Node/177279b2-7741-4059-bff9-beddd6dd3feb/a9fe5b5c-6667-4f66-b420-e9fa735a8196/GetLicenceKeyV1?CustomerID=C0000001&ProductID=P0000001';
 
-    $(document).ready(function () {
-      // Send an AJAX request
-      $.getJSON(uri)
-          .done(function (data) {
-            // On success, 'data' contains a list of products.
-            $.each(data, function (key, item) {
-              // Add a list item for the product.
-              $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-            });
-          });
-    });
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+        });
 
-    function formatItem(item) {
-      return item.Name + ': $' + item.Price;
-    }
+        function getKey() {
+            $.getJSON(uriGetLicenceKey)
+                .done(function (data) {
+                    $('#key').text(data.GetLicenceKeyResponse.LicenceKey);
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#key').text('Sorry an error has occurred: ' + testStatus + ' ' + err);
+                });
+        }
 
-    function find() {
-      var id = $('#prodId').val();
-      $.getJSON(uri + '/' + id)
-          .done(function (data) {
-            $('#product').text(formatItem(data));
-          })
-          .fail(function (jqXHR, textStatus, err) {
-            $('#product').text('Error: ' + err);
-          });
-    }
+        function getGift() {
+            $.getJSON(uriGift)
+                .done(function (data) {
+                    $('#gift').text(data.Gift.Name);
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#gift').text('Sorry an error has occurred: ' + testStatus + ' ' + err);
+                });
+        }
     </script>
 </body>
 </html>

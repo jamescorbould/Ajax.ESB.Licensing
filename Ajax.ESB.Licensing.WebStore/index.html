@@ -3,20 +3,53 @@
 <head>
     <title>Ajax Licensing App</title>
 </head>
-<body>
+<body style="background-color:black">
+    <style>
+        h2 {
+            font-size: 54px;
+            color: white;
+        }
+
+        .btn {
+            background: #3498db;
+            background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+            background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+            background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+            background-image: -o-linear-gradient(top, #3498db, #2980b9);
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 36px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #3cb0fd;
+            background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+            background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+            text-decoration: none;
+        }
+    </style>
 
     <div>
-        <h2>Obtain License Key and Your Free Gift!</h2>
-        <ul id="products" />
-    </div>
-    <div>
-        <input type="button" value="Obtain License Key" onclick="getKey();" />
-        <p id="key" />
+        <h2><b>Obtain License Key and Your Free Gift!</b></h2>
     </div>
 
     <div>
-        <input type="button" value="Obtain Free Gift" onclick="getGift();" />
-        <p id="gift" />
+        <input type="button" class="btn" value="Obtain License Key" onclick="getKey();" />
+        <p id="key" style="font-size:36px;font-weight:bold" />
+    </div>
+
+    <div>
+        <input type="button" class="btn" value="Obtain Free Gift" onclick="getGift();" />
+        <p id="gift" style="font-size:36px;font-weight:bold" />
     </div>
 
     <script src=".\jquery-2.0.3.min.js"></script>
@@ -31,20 +64,20 @@
         function getKey() {
             $.getJSON(uriGetLicenceKey)
                 .done(function (data) {
-                    $('#key').text(data.GetLicenceKeyResponse.LicenceKey);
+                    $('#key').text(data.GetLicenceKeyResponse.LicenceKey).css('color', 'white');
                 })
                 .fail(function (jqXHR, textStatus, err) {
-                    $('#key').text('Sorry an error has occurred: ' + testStatus + ' ' + err);
+                    $('#key').text('Sorry an error has occurred: ' + err).css('color', 'red');
                 });
         }
 
         function getGift() {
             $.getJSON(uriGift)
                 .done(function (data) {
-                    $('#gift').text(data.Gift.Name);
+                    $('#gift').text(data.Gift.Name).css('color', 'white');
                 })
                 .fail(function (jqXHR, textStatus, err) {
-                    $('#gift').text('Sorry an error has occurred: ' + testStatus + ' ' + err);
+                    $('#gift').text('Sorry an error has occurred: ' + err).css('color', 'red');
                 });
         }
     </script>

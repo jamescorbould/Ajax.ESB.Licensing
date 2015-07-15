@@ -7,7 +7,7 @@
     <style>
         h2 {
             font-size: 54px;
-            color: white;
+            color: lightgray;
         }
 
         .btn {
@@ -64,7 +64,7 @@
         function getKey() {
             $.getJSON(uriGetLicenceKey)
                 .done(function (data) {
-                    $('#key').text(data.GetLicenceKeyResponse.LicenceKey).css('color', 'white');
+                    $('#key').text(data.GetLicenceKeyResponse.LicenceKey).css('color', 'lightgray');
                 })
                 .fail(function (jqXHR, textStatus, err) {
                     $('#key').text('Sorry an error has occurred: ' + err).css('color', 'red');
@@ -74,7 +74,7 @@
         function getGift() {
             $.getJSON(uriGift)
                 .done(function (data) {
-                    $('#gift').text(data.Gift.Name).css('color', 'white');
+                    $('#gift').text(data.Gift.Name).css('color', 'lightgray');
                 })
                 .fail(function (jqXHR, textStatus, err) {
                     $('#gift').text('Sorry an error has occurred: ' + err).css('color', 'red');
